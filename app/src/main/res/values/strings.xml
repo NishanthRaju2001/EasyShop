@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">EasyShop</string>
+    <string name="all_types_of_furnitures_are_available">All types of furnitures are available</string>
+    <string name="furniture">All type of furnitures are available</string>
+    <string name="furniture_title">Furniture</string>
+    <string name="iphone_description">All types of mobile phones are available</string>
+    <string name="mobile_phone">Mobile Phones</string>
+    <string name="electronics">Electronics</string>
+    <string name="electronics_description">All types of electronics are available</string>
+    <string name="login">Login</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="get_started">Get Started</string>
+    <string name="email">Email Id</string>
+    <string name="email_edit_text">Enter email address</string>
+    <string name="password">Password</string>
+    <string name="password_edit_text">Enter Password</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="register">I DON\'T HAVE AN ACCOUNT</string>
+    <string name="full_name">Full Name</string>
+    <string name="register_title">Register</string>
+    <string name="full_name_edit_text">Enter Full Name</string>
+    <string name="mobile_no">Mobile No.</string>
+    <string name="i_have_account">I HAVE AN ACCOUNT</string>
+    <string name="mobile_no_edit_text">Enter Mobile No.</string>
+    <string name="welcome">Welcome</string>
+    <string name="easyShop">Easy Shop</string>
+    <string name="smart_phones">Smart Phones</string>
+    <string name="smart_phones_description">Description</string>
+    <string name="smart_phones_cost">200</string>
+    <string name="add_to_cart">ADD TO CART</string>
+    <string name="dollar_sign">$</string>
+    <string name="_1">1</string>
+    <string name="details">Details</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="phone_name">Phone Name</string>
+    <string name="phone_description">Phone description</string>
+    <string name="specification">Specifications</string>
+    <string name="user_review">User Review</string>
+    <string name="user_name">User Name</string>
+    <string name="user_comment">Comments</string>
+    <string name="detailed_comment">Detailed Comment</string>
+    <string name="_1dp">1</string>
+</resources>

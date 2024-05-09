@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/userNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:layout_margin="@dimen/_10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/userCommentTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_comment"
+        android:textColor="@color/color_orange"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginTop="@dimen/_10dp"
+        app:layout_constraintTop_toBottomOf="@id/userNameTV"
+        app:layout_constraintStart_toStartOf="@id/userNameTV"/>
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/userRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_marginEnd="@dimen/_10dp"
+        android:numStars="5"
+        android:rating="3"
+        app:layout_constraintTop_toTopOf="@id/userNameTV"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detailedCommentTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detailed_comment"
+        android:layout_marginTop="@dimen/_10dp"
+        app:layout_constraintTop_toBottomOf="@id/userCommentTV"
+        app:layout_constraintStart_toStartOf="@id/userCommentTV"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
