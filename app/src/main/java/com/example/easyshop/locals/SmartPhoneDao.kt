@@ -14,4 +14,6 @@ interface SmartPhoneDao {
 
      @Insert
      fun insertSmartPhone(smartPhone: SmartPhoneEntity)
+    @Query("SELECT * FROM smartphones WHERE id = :smartPhoneId")
+    fun getSmartPhoneById(smartPhoneId: Long): SmartPhoneEntity?
 }

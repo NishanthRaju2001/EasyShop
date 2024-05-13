@@ -1,6 +1,7 @@
 package com.example.easyshop
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -16,7 +17,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class SmartPhonesActivity : AppCompatActivity() {
+class SmartPhonesActivity : AppCompatActivity(), SmartPhoneAdapter.OnItemClickListener {
     private lateinit var binding: ActivitySmartPhonesBinding
     private lateinit var adapter: SmartPhoneAdapter
     private lateinit var smartPhoneDao: SmartPhoneDao
@@ -38,13 +39,15 @@ class SmartPhonesActivity : AppCompatActivity() {
             insets
         }
 
-
         val dataInserted = sharedPreferences.getBoolean("data_inserted", false)
         if (!dataInserted) {
             insertDummyData()
         }
 
         loadDataFromDatabase()
+        binding.backIcon.setOnClickListener {
+            navigateToDashboard()
+        }
     }
 
     private fun loadDataFromDatabase() {
@@ -58,6 +61,7 @@ class SmartPhonesActivity : AppCompatActivity() {
 
     private fun setupRecyclerView(smartPhoneList: List<SmartPhoneEntity>) {
         adapter = SmartPhoneAdapter(smartPhoneList)
+        adapter.itemClickListener = this
         with(binding) {
             smartPhoneRV.layoutManager = LinearLayoutManager(this@SmartPhonesActivity)
             smartPhoneRV.adapter = adapter
@@ -71,28 +75,40 @@ class SmartPhonesActivity : AppCompatActivity() {
         }
     }
 
+    override fun onItemClick(smartPhone: SmartPhoneEntity) {
+
+        val intent = Intent(this, ProductDetailsActivity::class.java)
+        intent.putExtra("smartPhoneId", smartPhone.id)
+        startActivity(intent)
+    }
+    private fun navigateToDashboard() {
+        val intent = Intent(this, DashboardActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
     companion object {
         private val dummySmartPhoneData = listOf(
             SmartPhoneEntity(
-                smartPhoneIV = R.drawable.ic_launcher_background,
+                smartPhoneIV = R.drawable.iphone_15_pro_max,
                 smartPhoneTitle = "Iphone 15 pro max",
                 smartPhoneDescription = "Natural Titanium . iPhone 15 Pro Max has a 6.7-inch all-screen Super Retina XDR display with the Dynamic Island.",
                 price = 1200
             ),
             SmartPhoneEntity(
-                smartPhoneIV = R.drawable.ic_launcher_background,
+                smartPhoneIV = R.drawable.iphone_15_pro,
                 smartPhoneTitle = "Iphone 15 pro",
                 smartPhoneDescription = "Black Titanium . iPhone 15 Pro has a 6.1-inch all-screen Super Retina XDR display with the Dynamic Island.",
                 price = 100
             ),
             SmartPhoneEntity(
-                smartPhoneIV = R.drawable.ic_launcher_background,
+                smartPhoneIV = R.drawable.iphone_15,
                 smartPhoneTitle = "Iphone 15",
                 smartPhoneDescription = "Yellow . iPhone 15 has a 6.1-inch all-screen Super Retina XDR display.",
                 price = 800
             ),
             SmartPhoneEntity(
-                smartPhoneIV = R.drawable.ic_launcher_background,
+                smartPhoneIV = R.drawable.iphone_15_plus,
                 smartPhoneTitle = "Iphone 15 plus",
                 smartPhoneDescription = "Pink . iPhone 15 Plus has a 6.3-inch all-screen Super Retina XDR.",
                 price = 900

@@ -7,7 +7,19 @@ import com.example.easyshop.databinding.SmartPhoneListBinding
 import com.example.easyshop.locals.SmartPhoneEntity
 
 class SmartPhoneAdapter(private val smartPhone:List<SmartPhoneEntity>):RecyclerView.Adapter<SmartPhoneAdapter.SmartPhoneViewHolder>() {
+    interface OnItemClickListener {
+        fun onItemClick(smartPhone: SmartPhoneEntity)
+    }
+    var itemClickListener: OnItemClickListener? = null
     inner class SmartPhoneViewHolder(private val binding:SmartPhoneListBinding):RecyclerView.ViewHolder(binding.root){
+        init {
+            binding.root.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    itemClickListener?.onItemClick(smartPhone[position])
+                }
+            }
+        }
         fun bindData(smartPhoneList: SmartPhoneEntity){
             with(binding){
                 phoneIV.setImageResource(smartPhoneList.smartPhoneIV)

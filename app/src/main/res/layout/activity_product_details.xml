@@ -33,6 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
+</androidx.constraintlayout.widget.ConstraintLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,11 +42,118 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/phoneName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone_name"
+                android:textColor="@color/black"
+                android:layout_marginStart="@dimen/_10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_margin="@dimen/_10dp"
+                android:numStars="5"
+                android:rating="4"
+                app:layout_constraintTop_toTopOf="@id/phoneName"
+                app:layout_constraintEnd_toEndOf="parent"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/phoneDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone_description"
+                android:textColor="@color/description_color"
+                app:layout_constraintTop_toBottomOf="@id/phoneName"
+                app:layout_constraintStart_toStartOf="@id/phoneName"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/phoneIV"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_400dp"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintTop_toBottomOf="@id/phoneDescription"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dollarSign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dollar_sign"
+                android:layout_marginTop="@dimen/_10dp"
+                app:layout_constraintTop_toBottomOf="@id/phoneIV"
+                app:layout_constraintStart_toStartOf="@id/phoneName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/phoneCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/smart_phones_cost"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:layout_marginStart="@dimen/_5dp"
+                app:layout_constraintTop_toTopOf="@id/dollarSign"
+                app:layout_constraintStart_toEndOf="@id/dollarSign"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/addToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_to_cart"
+                android:layout_marginEnd="@dimen/_5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintTop_toTopOf="@id/dollarSign"
+                app:layout_constraintEnd_toEndOf="parent"/>
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintTop_toBottomOf="@id/dollarSign"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_10dp"
+                android:background="@color/description_color"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/specificationsTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/specification"
+                android:layout_marginTop="@dimen/_10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                app:layout_constraintStart_toStartOf="@id/phoneName"/>
+            <View
+                android:id="@+id/dividerSpecifications"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintTop_toBottomOf="@id/specificationsTV"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_10dp"
+                android:background="@color/description_color"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/userReviewTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_review"
+                android:layout_marginTop="@dimen/_10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintTop_toBottomOf="@id/dividerSpecifications"
+                app:layout_constraintStart_toStartOf="@id/phoneName"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/userReviewRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_review"
+                android:layout_margin="@dimen/_10dp"
+                tools:itemCount="2"
+                app:layout_constraintTop_toBottomOf="@id/userReviewTV"
+                app:layout_constraintStart_toStartOf="@id/phoneName"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
