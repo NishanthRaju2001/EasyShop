@@ -1,14 +1,14 @@
 package com.example.easyshop
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.easyshop.databinding.SmartPhoneListBinding
+import com.example.easyshop.locals.SmartPhoneEntity
 
-class SmartPhoneAdapter(private val smartPhone:List<SmartPhoneList>):RecyclerView.Adapter<SmartPhoneAdapter.SmartPhoneViewHolder>() {
+class SmartPhoneAdapter(private val smartPhone:List<SmartPhoneEntity>):RecyclerView.Adapter<SmartPhoneAdapter.SmartPhoneViewHolder>() {
     inner class SmartPhoneViewHolder(private val binding:SmartPhoneListBinding):RecyclerView.ViewHolder(binding.root){
-        fun bindData(smartPhoneList: SmartPhoneList){
+        fun bindData(smartPhoneList: SmartPhoneEntity){
             with(binding){
                 phoneIV.setImageResource(smartPhoneList.smartPhoneIV)
                 phoneTitle.text=smartPhoneList.smartPhoneTitle
@@ -30,10 +30,6 @@ class SmartPhoneAdapter(private val smartPhone:List<SmartPhoneList>):RecyclerVie
         val data = smartPhone[position]
         holder.bindData(data)
         val context = holder.itemView.context
-        holder.itemView.setOnClickListener {
-            val intent = Intent(context, ProductDetailsAcvtivity::class.java)
-            intent.putExtra("Data", data)
-            context.startActivity(intent)
-        }
+
     }
 }

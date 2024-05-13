@@ -13,14 +13,15 @@
         android:theme="@style/Theme.EasyShop"
         tools:targetApi="31">
         <activity
+            android:name=".ProductDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SmartPhonesActivity"
             android:exported="false" />
         <activity
             android:name=".DashboardActivity"
             android:exported="false" />
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
+        <activity android:name=".RegisterActivity"/>
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
