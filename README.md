@@ -24,6 +24,10 @@ Makes the customer top shop the products they want with minimmul steps and time.
 # SmartPhone Product detailed Screen
 ![SmartPhone Product detailed Screen](https://github.com/NishanthRaju2001/EasyShop/assets/61423669/a277f2a5-165c-4b8d-af64-e84730d02018)
 
+# Concepts Used
+
+Used RoomDatabase to store the user data who are registering in the app and only allowing them to login if the credentails matches with the databse.<br>
+Added shared preferences and Secured Shared preferences to the app so that when ever app is reopened after the download it should open direct dashboard screen.
 
 
 
